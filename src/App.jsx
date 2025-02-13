@@ -22,17 +22,26 @@ function App() {
 			<div className="container main-content">
 				<div className="row">
 					<div className="col-md-4 text-center">
-						<img src="https://codingapple1.github.io/shop/shoes1.jpg" />
+						<img
+							src="https://codingapple1.github.io/shop/shoes1.jpg"
+							alt="shoes"
+						/>
 						<h4>Product</h4>
 						<p>Description</p>
 					</div>
 					<div className="col-md-4 text-center">
-						<img src="https://codingapple1.github.io/shop/shoes2.jpg" />
+						<img
+							src="https://codingapple1.github.io/shop/shoes2.jpg"
+							alt="shoes"
+						/>
 						<h4>Product</h4>
 						<p>Description</p>
 					</div>
 					<div className="col-md-4 text-center">
-						<img src="https://codingapple1.github.io/shop/shoes3.jpg" />
+						<img
+							src="https://codingapple1.github.io/shop/shoes3.jpg"
+							alt="shoes"
+						/>
 						<h4>Product</h4>
 						<p>Description</p>
 					</div>
