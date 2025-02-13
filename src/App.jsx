@@ -16,6 +16,28 @@ function App() {
 					</Nav>
 				</Container>
 			</Navbar>
+
+			<div className="main-bg"></div>
+
+			<div className="container main-content">
+				<div className="row">
+					<div className="col-md-4 text-center">
+						<img src="https://codingapple1.github.io/shop/shoes1.jpg" />
+						<h4>Product</h4>
+						<p>Description</p>
+					</div>
+					<div className="col-md-4 text-center">
+						<img src="https://codingapple1.github.io/shop/shoes2.jpg" />
+						<h4>Product</h4>
+						<p>Description</p>
+					</div>
+					<div className="col-md-4 text-center">
+						<img src="https://codingapple1.github.io/shop/shoes3.jpg" />
+						<h4>Product</h4>
+						<p>Description</p>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 }
