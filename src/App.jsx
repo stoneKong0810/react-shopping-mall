@@ -3,8 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useState } from 'react';
+import shoesData from './data.js';
 
 function App() {
+	const [shoes] = useState(shoesData);
+
 	return (
 		<>
 			<Navbar bg="light" data-bs-theme="light">
@@ -19,35 +23,24 @@ function App() {
 
 			<div className="main-bg"></div>
 
-			<div className="container main-content">
-				<div className="row">
-					<div className="col-md-4 text-center">
-						<img
-							src="https://codingapple1.github.io/shop/shoes1.jpg"
-							alt="shoes"
-						/>
-						<h4>Product</h4>
-						<p>Description</p>
-					</div>
-					<div className="col-md-4 text-center">
-						<img
-							src="https://codingapple1.github.io/shop/shoes2.jpg"
-							alt="shoes"
-						/>
-						<h4>Product</h4>
-						<p>Description</p>
-					</div>
-					<div className="col-md-4 text-center">
-						<img
-							src="https://codingapple1.github.io/shop/shoes3.jpg"
-							alt="shoes"
-						/>
-						<h4>Product</h4>
-						<p>Description</p>
-					</div>
-				</div>
-			</div>
+			<Products shoes={shoes} />
 		</>
+	);
+}
+
+function Products(props) {
+	return (
+		<div className="container main-content">
+			<div className="row">
+				{props.shoes.map((shoe, index) => (
+					<div className="col-md-4 text-center" key={index}>
+						<img src={shoe.image} alt={shoe.name} />
+						<h4>{shoe.title}</h4>
+						<p>{shoe.content}</p>
+					</div>
+				))}
+			</div>
+		</div>
 	);
 }
 
