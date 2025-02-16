@@ -4,7 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState } from 'react';
-import shoesData from './data.js';
+import shoesData from './data/data.js';
+import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import Detail from './pages/Detail.jsx';
+import Main from './pages/Main.jsx';
 
 function App() {
 	const [shoes] = useState(shoesData);
@@ -21,26 +24,11 @@ function App() {
 				</Container>
 			</Navbar>
 
-			<div className="main-bg"></div>
-
-			<Products shoes={shoes} />
+			<Routes>
+				<Route path="/" element={<Main shoes={shoes} />} />
+				<Route path="/detail" element={<Detail />} />
+			</Routes>
 		</>
-	);
-}
-
-function Products({ shoes }) {
-	const renderShoe = (shoe, index) => (
-		<div className="col-md-4 text-center" key={index}>
-			<img src={shoe.image} alt={shoe.name} />
-			<h4>{shoe.title}</h4>
-			<p>{shoe.content}</p>
-		</div>
-	);
-
-	return (
-		<div className="container main-content">
-			<div className="row">{shoes.map(renderShoe)}</div>
-		</div>
 	);
 }
 
