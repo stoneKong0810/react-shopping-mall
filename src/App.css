@@ -9,6 +9,7 @@ div {
 .container {
   place-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .main-bg {
@@ -20,4 +21,8 @@ div {
 
 .main-content img {
   width: 80%;
+}
+
+.detail-content {
+  margin-bottom: 50px;
 }
