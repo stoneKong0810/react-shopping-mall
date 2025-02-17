@@ -10,7 +10,7 @@ import Detail from './pages/Detail.jsx';
 import Main from './pages/Main.jsx';
 
 function App() {
-	const [shoes] = useState(shoesData);
+	const [shoes, setShoes] = useState(shoesData);
 	const navigate = useNavigate();
 
 	return (
@@ -39,7 +39,7 @@ function App() {
 
 			<Routes>
 				<Route path="*" />
-				<Route path="/" element={<Main shoes={shoes} />} />
+				<Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
 				<Route path="/detail/:id" element={<Detail shoes={shoes} />} />
 			</Routes>
 		</>
