@@ -1,12 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ProductsInfo from '../components/ProductsInfo.jsx';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addCart } from '../store.jsx';
 
 function Detail({ shoes }) {
 	const dispatch = useDispatch();
-	const stock = useSelector((state) => state.stock);
 	const { id } = useParams();
 	const shoeId = parseInt(id, 10);
 	const shoe = shoes.find((shoe) => shoe.id === shoeId);
