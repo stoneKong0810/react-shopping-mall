@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductsInfo from '../components/productsInfo.jsx';
+import ProductsInfo from '../components/ProductsInfo.jsx';
 
 function Detail({ shoes }) {
 	const { id } = useParams();
@@ -35,7 +35,7 @@ function Detail({ shoes }) {
 					</div>
 				</div>
 			</div>
-			<ProductsInfo />
+			<ProductsInfo shoes={shoes} />
 		</>
 	);
 }

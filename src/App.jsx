@@ -5,9 +5,10 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState } from 'react';
 import shoesData from './data/data.js';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Detail from './pages/Detail.jsx';
 import Main from './pages/Main.jsx';
+import Cart from './pages/Cart.jsx';
 
 function App() {
 	const [shoes, setShoes] = useState(shoesData);
@@ -33,6 +34,13 @@ function App() {
 						>
 							Detail
 						</Nav.Link>
+						<Nav.Link
+							onClick={() => {
+								navigate('/cart');
+							}}
+						>
+							Cart
+						</Nav.Link>
 					</Nav>
 				</Container>
 			</Navbar>
@@ -41,6 +49,7 @@ function App() {
 				<Route path="*" />
 				<Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
 				<Route path="/detail/:id" element={<Detail shoes={shoes} />} />
+				<Route path="/cart" element={<Cart />} />
 			</Routes>
 		</>
 	);

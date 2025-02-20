@@ -1,7 +1,7 @@
 import Nav from 'react-bootstrap/Nav';
 import { useState } from 'react';
 
-function ProductsInfo() {
+function ProductsInfo({ shoes }) {
 	const [tab, setTab] = useState(0);
 
 	return (
@@ -38,20 +38,17 @@ function ProductsInfo() {
 					</Nav.Link>
 				</Nav.Item>
 			</Nav>
-			<TabContent tab={tab} />
+			<TabContent tab={tab} shoes={shoes} />
 		</>
 	);
 }
 
-function TabContent({ tab }) {
-	switch (tab) {
-		case 0:
-			return <div>상세 정보</div>;
-		case 1:
-			return <div>판매자 정보</div>;
-		case 2:
-			return <div>리뷰</div>;
-	}
+function TabContent({ tab, shoes }) {
+	return [
+		<div key={0}>{shoes[0].title}</div>,
+		<div key={1}>내용1</div>,
+		<div key={2}>내용2</div>,
+	][tab];
 }
 
 export default ProductsInfo;
