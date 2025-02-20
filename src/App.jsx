@@ -7,8 +7,8 @@ import { useState } from 'react';
 import shoesData from './data/data.js';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Detail from './pages/Detail.jsx';
-import Main from './pages/Main.jsx';
-import Cart from './pages/Cart.jsx';
+import Default from './pages/Default.jsx';
+import Cart from './pages/ShoppingCart.jsx';
 
 function App() {
 	const [shoes, setShoes] = useState(shoesData);
@@ -47,7 +47,10 @@ function App() {
 
 			<Routes>
 				<Route path="*" />
-				<Route path="/" element={<Main shoes={shoes} setShoes={setShoes} />} />
+				<Route
+					path="/"
+					element={<Default shoes={shoes} setShoes={setShoes} />}
+				/>
 				<Route path="/detail/:id" element={<Detail shoes={shoes} />} />
 				<Route path="/cart" element={<Cart />} />
 			</Routes>
