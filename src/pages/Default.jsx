@@ -2,7 +2,7 @@ import Products from '../components/products.jsx';
 import axios from 'axios';
 import { useState } from 'react';
 
-function Main({ shoes, setShoes }) {
+function Default({ shoes, setShoes }) {
 	const [showMoreCount, setShowMoreCount] = useState(1);
 	const handleShowMore = () => {
 		if (showMoreCount < 3) {
@@ -34,4 +34,4 @@ function Main({ shoes, setShoes }) {
 	);
 }
 
-export default Main;
+export default Default;
