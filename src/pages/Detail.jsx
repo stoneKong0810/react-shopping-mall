@@ -20,6 +20,15 @@ function Detail({ shoes }) {
 		};
 	}, []);
 
+	useEffect(() => {
+		let watched = localStorage.getItem('watched');
+		watched = JSON.parse(watched);
+		watched.push(shoe.id);
+		watched = new Set(watched);
+		watched = Array.from(watched);
+		localStorage.setItem('watched', JSON.stringify(watched));
+	});
+
 	const addToCart = () => {
 		dispatch(
 			addCart({

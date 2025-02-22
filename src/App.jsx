@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import shoesData from './data/data.js';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import Detail from './pages/Detail.jsx';
@@ -13,6 +13,10 @@ import Cart from './pages/ShoppingCart.jsx';
 function App() {
 	const [shoes, setShoes] = useState(shoesData);
 	const navigate = useNavigate();
+
+	useEffect(() => {
+		localStorage.setItem('watched', JSON.stringify([]));
+	}, []);
 
 	return (
 		<>
